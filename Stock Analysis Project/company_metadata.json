@@ -1,0 +1,87 @@
+[
+    {
+      "company_name": "Apple Inc.",
+      "ticker_symbol": "AAPL",
+      "industry": "Technology (Consumer Electronics, Software)",
+      "exchange": "NASDAQ",
+      "popular_products": ["iPhone", "Mac", "iPad", "Apple Watch", "AirPods", "Apple TV"]
+    },
+    {
+      "company_name": "Alphabet Inc. (Google)",
+      "ticker_symbol": "GOOGL",
+      "industry": "Technology (Internet Services)",
+      "exchange": "NASDAQ",
+      "popular_products": ["Google Search", "Android OS", "Google Chrome", "YouTube", "Google Cloud", "Google Maps"]
+    },
+    {
+      "company_name": "Amazon.com Inc.",
+      "ticker_symbol": "AMZN",
+      "industry": "E-commerce, Cloud Computing, Artificial Intelligence",
+      "exchange": "NASDAQ",
+      "popular_products": ["Amazon.com", "Amazon Web Services (AWS)", "Alexa", "Kindle", "Prime Video"]
+    },
+    {
+      "company_name": "Microsoft Corporation",
+      "ticker_symbol": "MSFT",
+      "industry": "Technology (Software, Hardware, Cloud Computing)",
+      "exchange": "NASDAQ",
+      "popular_products": ["Windows", "Office Suite", "Xbox", "Surface", "Azure", "LinkedIn"]
+    },
+    {
+      "company_name": "Tesla Inc.",
+      "ticker_symbol": "TSLA",
+      "industry": "Automotive, Renewable Energy",
+      "exchange": "NASDAQ",
+      "popular_products": ["Electric Vehicles (EVs)", "Solar Panels", "Powerwall", "Autopilot"]
+    },
+    {
+      "company_name": "Meta Platforms Inc. (formerly Facebook Inc.)",
+      "ticker_symbol": "META",
+      "industry": "Social Media, Virtual Reality",
+      "exchange": "NASDAQ",
+      "popular_products": ["Facebook", "Instagram", "WhatsApp", "Oculus", "Facebook Messenger"]
+    },
+    {
+      "company_name": "Netflix Inc.",
+      "ticker_symbol": "NFLX",
+      "industry": "Entertainment (Streaming Media)",
+      "exchange": "NASDAQ",
+      "popular_products": ["Netflix Streaming Service", "Netflix Originals", "DVD Rental (historically)"]
+    },
+    {
+      "company_name": "NVIDIA Corporation",
+      "ticker_symbol": "NVDA",
+      "industry": "Semiconductors, Graphics Processing Units (GPUs)",
+      "exchange": "NASDAQ",
+      "popular_products": ["GeForce GPUs", "Quadro GPUs", "Tesla GPUs", "NVIDIA Shield", "NVIDIA Drive"]
+    },
+    {
+      "company_name": "PayPal Holdings Inc.",
+      "ticker_symbol": "PYPL",
+      "industry": "Financial Technology (Fintech, Digital Payments)",
+      "exchange": "NASDAQ",
+      "popular_products": ["PayPal Payments", "Venmo", "Braintree", "Xoom"]
+    },
+    {
+      "company_name": "Intel Corporation",
+      "ticker_symbol": "INTC",
+      "industry": "Semiconductors (Integrated Circuits)",
+      "exchange": "NASDAQ",
+      "popular_products": ["Intel Processors", "Intel Xeon", "Intel Core", "Intel Optane"]
+    },
+    {
+      "company_name": "International Business Machines Corporation",
+      "ticker_symbol": "IBM",
+      "industry": "Technology (Software, Hardware, Consulting)",
+      "exchange": "NYSE",
+      "popular_products": ["IBM Watson", "IBM Cloud", "IBM Z", "IBM Mainframe", "IBM Power Systems"]
+    },
+    {
+      "company_name": "Oracle Corporation",
+      "ticker_symbol": "ORCL",
+      "industry": "Software, Cloud Computing, Database Management",
+      "exchange": "NYSE",
+      "popular_products": ["Oracle Database", "Oracle Cloud", "Java", "Oracle ERP", "Oracle Applications"]
+    }
+  ]
+  
