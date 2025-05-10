@@ -1,0 +1,37 @@
+step1: Create Bucket on Google cloud storage
+
+	gsutil mb gs://hemachandra-bucket/
+
+step2: copy all csvs files from local machine to bucket
+
+	gsutil cp C:/Users/HP/OneDrive/Desktop/bank_transactions_csvs/*.csv gs://hemachandra-bucket/transactions/
+
+step3: copy mysql-conn, jobs from local to bucket
+
+	gsutil cp C:/Users/HP/OneDrive/Desktop/bank_transactions_csvs/fetch_failed_trans.py gs://hemachandra-bucket/script1/
+	gsutil cp C:/Users/HP/OneDrive/Desktop/bank_transactions_csvs/clean_and_mergeData.py gs://hemachandra-bucket/script1/
+	gsutil cp "C:/Users/HP/OneDrive/Desktop/bank_transactions_csvs/mysql-connector-j-9.3.0/mysql-connector-j-9.3.0.jar" gs://hemachandra-bucket/
+
+step4: Create a Dataproc cluster
+
+	gcloud dataproc clusters create bank-cluster --region=us-central1 --zone=us-central1-a --single-node --master-machine-type=n1-standard-2 --master-boot-disk-size=100GB --image-version=2.1-debian11 --enable-component-gateway --bucket=hemachandra-bucket
+
+step5: Submit py-spark jobs
+
+	gcloud dataproc jobs submit pyspark gs://hemachandra-bucket/script1/clean_and_mergeData.py --cluster=bank-cluster --region=us-central1 --jars=gs://hemachandra-bucket/mysql-connector-j-9.3.0.jar
+
+
+	gcloud dataproc jobs submit pyspark gs://hemachandra-bucket/script1/fetch_failed_trans.py --region=us-central1 --cluster=bank-cluster --jars=gs://hemachandra-bucket/mysql-connector-j-9.3.0.jar
+
+
+step6: export the table data gcp bucket as csv file
+
+	gcloud sql export csv bank-instance gs://hemachandra-bucket/transactions.csv --database=bank_db --query="SELECT * FROM failed_transactions"
+
+step7:create a table on big query
+
+	bq mk --table hema-dataproc:bankDS.failed_transactions txn_id:STRING,branch_id:STRING,city:STRING,amount:FLOAT,status:STRING,date:DATE
+
+step8: copy the csv file from gcp bucket to big query table
+
+	bq load --source_format=CSV --skip_leading_rows=1 --autodetect hema-dataproc:bank_transactions.failed_transactions gs://hemachandra-bucket/transactions.csv
